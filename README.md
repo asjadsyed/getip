@@ -14,10 +14,8 @@ mono is also downloadable from their website:
 * <a href="http://www.mono-project.com/download/#download-mac">download for mac</a>
 * <a href="http://www.mono-project.com/download/#download-lin">download for linux</a>
 * <a href="http://www.mono-project.com/download/#download-win">download for windows</a>
-    
 
-  
-to download and run getip:  
+to download and run getip: 
   <pre><code>
   open a terminal<br />
   $ cd Downloads<br />
@@ -27,7 +25,7 @@ to download and run getip:
   $ cd getip-master/Linux/<br />
   $ mono getip<br />
   </code></pre>
-  
+
 getip will now search for routers until it finds one  
 if it doesn't, you either:  
   * can't access the internet, or  
