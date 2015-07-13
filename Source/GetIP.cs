@@ -8,8 +8,11 @@ class GetIP {
 	public static void Main() {
 		NatUtility.DeviceFound += HandleDeviceFound;
 		NatUtility.StartDiscovery ();
-		manualResetEvent.WaitOne (); }
+		manualResetEvent.WaitOne (); 
+	}
 
 	protected static void HandleDeviceFound (object sender, DeviceEventArgs args) {
 		Console.WriteLine (args.Device.GetExternalIP ().ToString());
-		manualResetEvent.Set (); } }
+		manualResetEvent.Set (); 
+	} 
+}
