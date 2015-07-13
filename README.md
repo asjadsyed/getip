@@ -42,19 +42,19 @@ to download and compile getip:
 $ sudo apt-get install mono-devel  
 </code><br />
 * then download and prepare to compile
-<code>
+<pre><code>
 $ cd Downloads<br />
 $ wget https://github.com/asjadsyed/getip/archive/master.zip -O getip.zip<br />
 $ unzip getip.zip<br />
 $ rm getip.zip<br />
 $ cd getip-master/Source/<br />
-</code>
-* compile
-<code>
-$ mcs GetIP.cs -r:Mono.Nat.dll -out:getip
-</code>
-you now have a binary named getip, but it needs to have the Mono.Nat.dll file in the same directory as it  
-you can merge the binary so that it contains Mono.Nat within it using <a href="https://github.com/gluck/il-repack">ILRepack</a>, but this has alreday been done for you in the Linux/ folder
+</code></pre>
+* compile<br />
+<pre><code>
+$ mcs GetIP.cs -r:Mono.Nat.dll -out:getip<br />
+</code></pre>
+you now have a binary named getip, but it needs to have the Mono.Nat.dll file in the same directory as it.  
+you can merge the binary so that it is standalone and contains Mono.Nat within it using <a href="https://github.com/gluck/il-repack">ILRepack</a>, but this has alreday been done for you in the Linux/ folder
 
 getip relies on <a href="https://github.com/mono/Mono.Nat">Mono.Nat</a>, a UPnP library, to communicate with your router  
 you do not need to install anything for this  
