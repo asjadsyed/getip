@@ -16,9 +16,9 @@ echo Compiling getinip
 mcs -r:$mononat/lib/net40/Mono.Nat.dll getinip.cs -out:../bin/getinip
 echo Compiling lspf
 mcs -r:$mononat/lib/net40/Mono.Nat.dll lspf.cs -out:../bin/lspf
-#mcs -r:$mononat/lib/net40/Mono.Nat.dll lspf.cs
-#mcs -r:$mononat/lib/net40/Mono.Nat.dll lspf.cs
-#mcs -r:$mononat/lib/net40/Mono.Nat.dll lspf.cs
+mcs -r:$mononat/lib/net40/Mono.Nat.dll clearpf.cs -out:../bin/clearpf
+#mcs -r:$mononat/lib/net40/Mono.Nat.dll clearpf.cs -out:../bin/clearpf.cs
+#mcs -r:$mononat/lib/net40/Mono.Nat.dll clearpf.cs -out:../bin/clearpf.cs
 
 if [ ! -d ILRepack.* ]; then
 	echo Downloading ILRepack
@@ -31,20 +31,23 @@ echo Repacking getinip
 mono $ilrepack/tools/ILRepack.exe -out:../bin/getinip ../bin/getinip $mononat/lib/net40/Mono.Nat.dll
 echo Repacking lspf
 mono $ilrepack/tools/ILRepack.exe -out:../bin/lspf ../bin/lspf $mononat/lib/net40/Mono.Nat.dll
+echo Repacking clearpf
+mono $ilrepack/tools/ILRepack.exe -out:../bin/clearpf ../bin/clearpf $mononat/lib/net40/Mono.Nat.dll
 #echo Repacking getexip
-#mono $ilrepack/tools/ILRepack.exe -out:../bin/getexip getexip $mononat/lib/net40/Mono.Nat.dll
+#mono $ilrepack/tools/ILRepack.exe -out:../bin/getexip ../bin/getexip $mononat/lib/net40/Mono.Nat.dll
 #echo Repacking getexip
-#mono $ilrepack/tools/ILRepack.exe -out:../bin/getexip getexip $mononat/lib/net40/Mono.Nat.dll
-#echo Repacking getexip
-#mono $ilrepack/tools/ILRepack.exe -out:../bin/getexip getexip $mononat/lib/net40/Mono.Nat.dll
+#mono $ilrepack/tools/ILRepack.exe -out:../bin/getexip ../bin/getexip $mononat/lib/net40/Mono.Nat.dll
 
 echo Installing to /usr/bin/
 echo Copying getexip
 sudo cp ../bin/getexip /usr/bin/
 echo Copying getinip
 sudo cp ../bin/getinip /usr/bin/
-echo Copying lspf
-sudo cp ../bin/lspf /usr/bin/
-
+echo Copying clearpf
+sudo cp ../bin/clearpf /usr/bin/
+#echo Copying lspf
+#sudo cp ../bin/lspf /usr/bin/
+#echo Copying lspf
+#sudo cp ../bin/lspf /usr/bin/
 
 
