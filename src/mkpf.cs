@@ -4,7 +4,7 @@ using System.Net;
 using Mono.Nat;
 
 namespace PFTools {
-	class GetInternalIP {
+	class MakePortForwardings {
 		private static ManualResetEvent manualResetEvent = new ManualResetEvent(false);
 		public static void Main() {
 			NatUtility.DeviceFound += HandleDeviceFound;
@@ -13,7 +13,8 @@ namespace PFTools {
 		}
 	
 		protected static void HandleDeviceFound (object sender, DeviceEventArgs args) {
-			Console.WriteLine (args.Device.LocalAddress.ToString());
+			foreach (Mapping mapping in args.Device.GetAllMappings ())
+				Console.WriteLine (mapping.ToString ());
 			manualResetEvent.Set (); 
 		} 
 	}
