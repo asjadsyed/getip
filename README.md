@@ -1,5 +1,9 @@
-getip is a simple tool to retrieve your external ip address from the router  
-
+#pftools
+Note that these instructions are out of date for the moment, until i get some free time to fix them
+pftools is a simple suite of tools to do things like
+	retrieve your external ip address from the router  
+	make port forwardings
+	
  
 getip relies on two things:   
 * that your router supports UPnP  
@@ -15,14 +19,14 @@ mono is also downloadable from their website:
 * <a href="http://www.mono-project.com/download/#download-lin">download for linux</a>
 * <a href="http://www.mono-project.com/download/#download-win">download for windows</a>
 
-to download and run getip: 
+to download and run the pftools utilities: 
   <pre><code>
   open a terminal<br />
   $ cd Downloads<br />
-  $ wget https://github.com/asjadsyed/getip/archive/master.zip -O getip.zip<br />
-  $ unzip getip.zip<br />
-  $ rm getip.zip<br />
-  $ cd getip-master/Linux/<br />
+  $ wget https://github.com/asjadsyed/pftools/archive/master.zip -O pftools.zip<br />
+  $ unzip pftools.zip<br />
+  $ rm pftools.zip<br />
+  $ cd pftools-master/Linux/<br />
   $ mono getip<br />
   </code></pre>
 
@@ -31,7 +35,7 @@ if it doesn't, you either:
   * can't access the internet, or  
   * your router doesn't support the UPnP Protocol  
 
-to install getip so that you can run it from any folder:  
+to install the pftools programs so that you can run them from any folder:  
 <code>
 sudo cp getip /usr/bin/
 </code>
